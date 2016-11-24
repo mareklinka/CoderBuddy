@@ -53,7 +53,6 @@
     <Compile Include="ActionsModule.cs" />
     <Compile Include="ActivityPayload.cs" />
     <Compile Include="ActivityResult.cs" />
-    <Compile Include="Available\BAAction.cs" />
     <Compile Include="Available\ConvertFromBase64Action.cs" />
     <Compile Include="Available\ConvertToBase64Action.cs" />
     <Compile Include="Available\HelloAction.cs" />
