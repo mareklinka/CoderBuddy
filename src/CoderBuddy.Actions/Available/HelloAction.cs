@@ -1,7 +1,9 @@
 ﻿using System.Text.RegularExpressions;
+using JetBrains.Annotations;
 
 namespace CoderBuddy.Actions.Available
 {
+    [UsedImplicitly]
     public sealed class HelloAction : ActionBase
     {
         private static readonly Regex Regex = CreateRegex("(hello|hi|yo|wasup|duuude)");
@@ -16,6 +18,6 @@ namespace CoderBuddy.Actions.Available
         public override string Name => "Hello";
         public override string Description => "Displays a welcome message.";
         public override string Syntax => "Hello";
-        public override string[] Examples => new[] { "_hello_", "_hi_" };
+        public override string[] Examples => new[] { "hello", "hi" };
     }
 }

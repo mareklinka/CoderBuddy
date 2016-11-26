@@ -20,7 +20,7 @@ namespace CoderBuddy.Actions
         protected static Regex CreateRegex([RegexPattern]string pattern)
         {
             return new Regex($"^(\\s*){pattern}(\\s*)$",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Singleline);
         }
 
         public virtual bool IsSecret => false;

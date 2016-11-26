@@ -40,7 +40,15 @@ namespace CoderBuddy.Bot.Controllers
                 if (matchingActions.Count == 1)
                 {
                     // return our reply to the user
-                    var reply = activity.CreateReply(matchingActions[0].Execute(payload).Message);
+                    var activityResult = matchingActions[0].Execute(payload);
+                    var reply = activity.CreateReply(activityResult.Message);
+
+                    reply.Attachments = new List<Attachment>();
+                    foreach (var a in activityResult.Attachments)
+                    {
+                        reply.Attachments.Add(new Attachment(name: a.Name,content: a.Data, contentType: a.ContentType));
+                    }
+                    
                     await connector.Conversations.ReplyToActivityAsync(reply);
                 }
                 else

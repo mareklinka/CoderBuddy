@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using JetBrains.Annotations;
 
 namespace CoderBuddy.Actions.Available
 {
+    [UsedImplicitly]
     public sealed class ConvertToBase64Action : ActionBase
     {
         private static readonly Regex Regex =
